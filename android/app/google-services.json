@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "51387060515",
+    "firebase_url": "https://soshanoi-44919.firebaseio.com",
+    "project_id": "soshanoi-44919",
+    "storage_bucket": "soshanoi-44919.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51387060515:android:645791bf32b1fda625bc96",
+        "android_client_info": {
+          "package_name": "com.hungnguyen.sos_hanoi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51387060515-d2q5pifie7s3g8jlvvp8r02trondu75m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9n-lUYaGHr5VNChnQMmOjqp9XlX08-MY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51387060515-d2q5pifie7s3g8jlvvp8r02trondu75m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "51387060515-n8uvggkkdott94i9jquodkkg16frk089.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.hungnguyen.soshanoi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
