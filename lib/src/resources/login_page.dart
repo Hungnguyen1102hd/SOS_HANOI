@@ -5,6 +5,7 @@ import 'package:sos_hanoi/src/resources/dialog/loading_dialog.dart';
 import 'package:sos_hanoi/src/resources/dialog/msg_dialog.dart';
 import 'package:sos_hanoi/src/resources/home_page.dart';
 import 'package:sos_hanoi/src/resources/register_page.dart';
+import 'package:sos_hanoi/src/resources/reset_password.dart';
 
 import '../app.dart';
 class LoginPage extends StatefulWidget {
@@ -40,12 +41,12 @@ class _LoginPageState extends State<LoginPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 40, 0, 6),
                 child: Text(
-                  "Welcome back!",
+                  "Chào mừng bạn đã quay lại!",
                   style: TextStyle(fontSize: 22, color: Color(0xff333333)),
                 ),
               ),
               Text(
-                "Login to continue using SOS Ha Noi",
+                "Hãy đăng nhập để tiếp tục sử dụng SOS Hà Nội",
                 style: TextStyle(fontSize: 16, color: Colors.black),
               ),
               Padding(
@@ -76,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(fontSize: 18, color: Colors.black),
                     obscureText: true,
                     decoration: InputDecoration(
-                        labelText: "Password",
+                        labelText: "Mật khẩu",
                         prefixIcon: Container(
                             width: 50, child: Image.asset("ic_phone.png")),
                         border: OutlineInputBorder(
@@ -91,9 +92,14 @@ class _LoginPageState extends State<LoginPage> {
                 alignment: AlignmentDirectional.centerEnd,
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                  child: Text(
-                    "Forgot password?",
-                    style: TextStyle(color: Colors.blue, fontSize: 16),
+                  child: RichText(
+                    text: TextSpan(
+                      recognizer: TapGestureRecognizer()
+                      ..onTap = () {
+                         Navigator.push(context,MaterialPageRoute(builder: (context) => ResetPassWord()));},
+                        text: "Quên mật khẩu?",
+                        style: TextStyle(color: Color(0xff3277D8), fontSize: 16),
+                    ),
                   ),
                 ),
               ),
@@ -105,7 +111,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: RaisedButton(
                     onPressed: _onLoginClick,
                     child: Text(
-                      "Log In",
+                      "Đăng nhập",
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     color: Color(0xff3277D8),
@@ -118,7 +124,7 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
                 child: RichText(
                   text: TextSpan(
-                      text: "New user? ",
+                      text: "Người dùng mới? ",
                       style: TextStyle(color: Color(0xff606470), fontSize: 16),
                       children: <TextSpan>[
                         TextSpan(
@@ -129,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                                     MaterialPageRoute(
                                         builder: (context) => RegisterPage()));
                               },
-                            text: "Sign up for a new account",
+                            text: "Đăng kí ngay",
                             style: TextStyle(
                                 color: Color(0xff3277D8), fontSize: 16))
                       ]),

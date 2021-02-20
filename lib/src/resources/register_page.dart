@@ -47,12 +47,12 @@ class _RegisterPageState extends State<RegisterPage> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(0, 20, 0, 6),
                 child: Text(
-                  "Welcome Aboard!",
+                  "Chào mừng bạn!",
                   style: TextStyle(fontSize: 22, color: Color(0xff333333)),
                 ),
               ),
               Text(
-                "Signup with SOS Ha Noi in simple steps",
+                "Đăng ký tài khoản bằng các bước đơn giản",
                 style: TextStyle(fontSize: 16, color: Color(0xff606470)),
               ),
               Padding(
@@ -64,7 +64,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       style: TextStyle(fontSize: 18, color: Colors.black),
                       decoration: InputDecoration(
                           errorText: snapshot.hasError ? snapshot.error : null,
-                          labelText: "Name",
+                          labelText: "Tên",
                           prefixIcon: Container(
                               width: 50, child: Image.asset("ic_user.png")),
                           border: OutlineInputBorder(
@@ -80,7 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     controller: _phoneController,
                     style: TextStyle(fontSize: 18, color: Colors.black),
                     decoration: InputDecoration(
-                        labelText: "Phone Number",
+                        labelText: "Số điện thoại",
                         errorText: snapshot.hasError ? snapshot.error : null,
                         prefixIcon: Container(
                             width: 50, child: Image.asset("ic_phone.png")),
@@ -118,7 +118,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     style: TextStyle(fontSize: 18, color: Colors.black),
                     decoration: InputDecoration(
                         errorText: snapshot.hasError ? snapshot.error : null,
-                        labelText: "Password",
+                        labelText: "Mật khẩu",
                         prefixIcon: Container(
                             width: 50, child: Image.asset("ic_lock.png")),
                         border: OutlineInputBorder(
@@ -135,7 +135,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: RaisedButton(
                     onPressed: _onSignUpClicked,
                     child: Text(
-                      "Signup",
+                      "Đăng kí",
                       style: TextStyle(color: Colors.white, fontSize: 18),
                     ),
                     color: Color(0xff3277D8),
@@ -148,7 +148,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 padding: const EdgeInsets.fromLTRB(0, 0, 0, 40),
                 child: RichText(
                   text: TextSpan(
-                      text: "Already a User? ",
+                      text: "Bạn đã có tài khoản? ",
                       style: TextStyle(color: Color(0xff606470), fontSize: 16),
                       children: <TextSpan>[
                         TextSpan(
@@ -160,7 +160,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                         builder: (context) => LoginPage()
                                     ));
                               },
-                            text: "Login now",
+                            text: "Đăng nhập ngay",
                             style: TextStyle(
                                 color: Color(0xff3277D8), fontSize: 16))
                       ]),
@@ -178,15 +178,14 @@ class _RegisterPageState extends State<RegisterPage> {
     if (isValid) {
       // create user
       // loading dialog
-      LoadingDialog.showLoadingDialog(context, 'Loading...');
+      LoadingDialog.showLoadingDialog(context, 'Vui lòng chờ...');
       authBloc.signUp(_emailController.text, _passController.text,
           _phoneController.text, _nameController.text,() {
             LoadingDialog.hideLoadingDialog(context);
-            MsgDialog.showMsgDialog(context, "Sign-up", "Successful!");
-
+            MsgDialog.showConfirmOption(context, "Đăng ký", "Đăng ký thành công");
       }, (msg){
         LoadingDialog.hideLoadingDialog(context);
-        MsgDialog.showMsgDialog(context, "Sign-In", msg);
+        MsgDialog.showMsgDialog(context, "Lỗi!!!", msg);
           });
     }
   }
