@@ -52,6 +52,9 @@ class AuthBloc {
       Function(String) onSignInError) {
     _firAuth.signIn(email, pass, onSuccess, onSignInError);
   }
+  void signOut(){
+    _firAuth.signOut();
+  }
 
   void dispose() {
     _nameController.close();
