@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:sos_hanoi/src/model/place_item_res.dart';
+
+import '../ride_picker_page.dart';
 
 class RidePicker extends StatefulWidget {
-  //final Function(PlaceItemRes, bool) onSelected;
-  //RidePicker(this.onSelected);
+  final Function(PlaceItemRes, bool) onSelected;
+  RidePicker(this.onSelected);
 
   @override
   _RidePickerState createState() => _RidePickerState();
 }
 
 class _RidePickerState extends State<RidePicker> {
-  //PlaceItemRes fromAddress;
+  PlaceItemRes fromAddress;
 
   @override
   Widget build(BuildContext context) {
@@ -30,18 +33,17 @@ class _RidePickerState extends State<RidePicker> {
             width: double.infinity,
             height: 50,
             child: FlatButton(
-             /* onPressed: () {
+             onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => RidePickerPage(
                         fromAddress == null ? "" : fromAddress.name,
                             (place, isFrom) {
                           widget.onSelected(place, isFrom);
                           fromAddress = place;
-                          setState(() {});
+                          setState(() {
+                          });
                         }, true)));
-              },
-
-              */
+                    },
               child: SizedBox(
                 width: double.infinity,
                 height: double.infinity,
@@ -66,13 +68,12 @@ class _RidePickerState extends State<RidePicker> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 40, right: 50),
-                      /*child: Text(
-                        fromAddress == null ? "From" : fromAddress.name,
+                      child: Text(
+                        fromAddress == null ? "" : fromAddress.name,
                         overflow: TextOverflow.ellipsis,
                         style:
                         TextStyle(fontSize: 16, color: Color(0xff323643)),
                       ),
-                       */
                     )
                   ],
                 ),
